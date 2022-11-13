@@ -4,9 +4,10 @@ FROM node:alpine
 WORKDIR /usr/app
 
 # Install some dependencies
-# copy everything from current context (active directory to current work dir inside container)
-COPY ./ ./
+# copy least changing file first from current context (active directory to current work dir inside container)
+COPY ./package.json ./
 RUN npm install
+COPY ./ ./
 
 # Default command
 CMD ["npm", "start"]
