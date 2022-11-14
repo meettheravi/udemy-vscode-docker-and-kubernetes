@@ -3,6 +3,7 @@ services:
   redis-server:
     image: 'redis'  # use image from docker hub
   node-app:
+    restart: always # on-failure (status code != 0), 'no' (without quotes not supported by .yml), unless-stopped (except manually stop via docker stop)
     build: .  # use dockerfile from current directory for build instructions
     ports:  # port mapping similar to docker run -p
       -  "4001:8081"
