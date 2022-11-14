@@ -1,0 +1,9 @@
+version: '3'  # docker-compose.yml version (docker's 'docker-compose.yml specification') we are going to use with this file
+services:
+  redis-server:
+    image: 'redis'  # use image from docker hub
+  node-app:
+    build: .  # use dockerfile from current directory for build instructions
+    ports:  # port mapping similar to docker run -p
+      -  "4001:8081"
+
