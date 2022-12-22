@@ -6,6 +6,8 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+# serves as an instruction for user of the image to open the port when it is run. IT DOES NOTHING.
+EXPOSE 80
 # refer phase from alias mentioned above
 COPY --from=builder /app/build /usr/share/nginx/html
 
