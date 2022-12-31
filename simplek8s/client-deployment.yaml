@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+# name of deployment
+  name: client-deployment
+spec:
+# no of pods created with given configuration
+  replicas: 1
+  # component 'web' is used to identify pods once they are created similar to client-node-port.yaml
+  selector:
+    matchLabels:
+      component: web
+# template is configuration of pods same as specified in client-pod.yaml
+  template:
+    metadata:
+    # name of pod
+      labels:
+        component: web
+    spec:
+      containers:
+      # name of container
+        - name: client
+        # image in docker hub
+          image: meettheravi/multi-client:removed_try
+          ports:
+          # port exposes from container
+            - containerPort: 3000
