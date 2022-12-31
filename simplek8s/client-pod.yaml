@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: meettheravi/multi-client:removed_try
+      image: meettheravi/multi-worker
       ports:
         - containerPort: 3000
