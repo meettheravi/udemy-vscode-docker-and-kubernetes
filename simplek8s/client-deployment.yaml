@@ -24,4 +24,4 @@ spec:
           image: meettheravi/multi-client:removed_try
           ports:
           # port exposes from container
-            - containerPort: 3000
+            - containerPort: 9999
